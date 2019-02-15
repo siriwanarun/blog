@@ -1,0 +1,53 @@
+const form = document.querySelector('form');
+const button = document.querySelector('button');
+const input = document.getElementById('email');
+//const input2 = document.getElementById('password');
+let itemsArray = localStorage.getItem('email') ? JSON.parse(localStorage.getItem('email')) : [];
+//let  pwArray = localStorage.getItem('password') ? JSON.parse(localStorage.getItem('password')) : [];
+
+localStorage.setItem('email', JSON.stringify(itemsArray));
+const data = JSON.parse(localStorage.getItem('email'));
+
+/*localStorage.setItem('password', JSON.stringify(pwArray));
+const data2 = JSON.parse(localStorage.getItem('password'));
+*/
+
+form.addEventListener('submit', function () {
+  
+
+  itemsArray.push(input.value);
+  localStorage.setItem('email', JSON.stringify(itemsArray));
+  //liMaker(input.value);
+  //input.value = "";
+});
+
+/*
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  pwArray.push(input2.value);
+  localStorage.setItem('password', JSON.stringify(pwArray));
+  //liMaker(input2.value);
+  input2.value = "";
+});
+*/
+//Validate 
+
+
+
+data.forEach(email => {
+ //liMaker(email);
+});
+
+/*
+button.addEventListener('click', function () {
+  localStorage.removeItem('email');
+  while (ul.firstChild) {
+    ul.removeChild(ul.firstChild);
+  }
+  itemsArray = [];
+  pwArray = [];
+});
+*/
+
+
